@@ -1,12 +1,10 @@
 fileFormatVersion: 2
-guid: eb6f0795d19f3438ab160e17231cf5a4
+guid: b1623fb560d40664bb92e72509464ff8
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Rizo_Idle_0
-    21300002: Rizo_Idle_1
-    21300004: Rizo_Idle_2
-    21300006: Rizo_Idle_3
-    21300008: Rizo_Idle_4
+    21300000: HiBridgette_Stone_0
+    21300002: HiBridgette_Stone_1
+    21300004: HiBridgette_Stone_2
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -65,7 +63,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 2
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 1024
+    maxTextureSize: 512
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -76,40 +74,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
   - serializedVersion: 2
     buildTarget: Standalone
-    maxTextureSize: 1024
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-  - serializedVersion: 2
-    buildTarget: iPhone
-    maxTextureSize: 1024
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-  - serializedVersion: 2
-    buildTarget: Android
-    maxTextureSize: 1024
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-  - serializedVersion: 2
-    buildTarget: WebGL
-    maxTextureSize: 1024
+    maxTextureSize: 512
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -122,13 +87,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Rizo_Idle_0
+      name: HiBridgette_Stone_0
       rect:
         serializedVersion: 2
-        x: 36
+        x: 0
         y: 0
-        width: 45
-        height: 124
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -136,19 +101,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cdfc8bc41e76ff6419bb4de66b80b005
+      spriteID: 41bcdabb38fd247e39282c075601d570
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Rizo_Idle_1
+      name: HiBridgette_Stone_1
       rect:
         serializedVersion: 2
-        x: 164
+        x: 100
         y: 0
-        width: 45
-        height: 124
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -156,19 +121,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 356e6319284ee0a4a82262ef78e3ddee
+      spriteID: 2dfa49152edf9449691d1f6bc291f6f5
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Rizo_Idle_2
+      name: HiBridgette_Stone_2
       rect:
         serializedVersion: 2
-        x: 292
+        x: 200
         y: 0
-        width: 45
-        height: 124
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -176,47 +141,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d329a2c02269d7b44adefb9671483594
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Rizo_Idle_3
-      rect:
-        serializedVersion: 2
-        x: 420
-        y: 0
-        width: 45
-        height: 124
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2149d669e78bf604984302d845ad713e
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Rizo_Idle_4
-      rect:
-        serializedVersion: 2
-        x: 548
-        y: 0
-        width: 45
-        height: 124
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c3b0cc7a16799ad48a86a231f1490112
+      spriteID: 2d15dfa237c244c90ac3c84e32bd9e44
       vertices: []
       indices: 
       edges: []
@@ -224,7 +149,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 78575fb4526d744978d48e367d0964fd
+    spriteID: 58395c0d0c4e34443935b6f36393f181
     vertices: []
     indices: 
     edges: []

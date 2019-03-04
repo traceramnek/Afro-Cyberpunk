@@ -143,7 +143,7 @@ public class PlayerPlatformer : MonoBehaviour
                 stunCounter = 0.0f;
                 myRigidBody.gravityScale = gravityScale;
                 float wallJumpx = wallJumpSpeed * Mathf.Cos(wallJumpAngle) * transform.localScale.x;
-                float wallJumpy = wallJumpSpeed * Mathf.Sin(wallJumpAngle);
+                float wallJumpy = wallJumpSpeed * Mathf.Sin(wallJumpAngle) * (0.75f* transform.localScale.y);
                 myRigidBody.velocity = new Vector2(wallJumpx, wallJumpy);
                 pressingJump = true;
                 stunCounter = stunCooldown;
