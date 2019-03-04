@@ -142,8 +142,8 @@ public class PlayerPlatformer : MonoBehaviour
             {
                 stunCounter = 0.0f;
                 myRigidBody.gravityScale = gravityScale;
-                float wallJumpx = wallJumpSpeed * Mathf.Cos(wallJumpAngle) * transform.localScale.x;
-                float wallJumpy = wallJumpSpeed * Mathf.Sin(wallJumpAngle) * (0.75f* transform.localScale.y);
+                float wallJumpx = wallJumpSpeed * Mathf.Cos(wallJumpAngle) * (1.5f* transform.localScale.x);
+                float wallJumpy = wallJumpSpeed * Mathf.Sin(wallJumpAngle) * (1.5f* transform.localScale.y);
                 myRigidBody.velocity = new Vector2(wallJumpx, wallJumpy);
                 pressingJump = true;
                 stunCounter = stunCooldown;
@@ -231,6 +231,7 @@ public class PlayerPlatformer : MonoBehaviour
     // checks the grounded state of the BoxCollider2D
     public bool IsGrounded()
     {
+        //tweaked the xLeftPosition for scaling purposes (quick fix)
         Vector2 offset = myBoxCollider.offset;
         if (transform.localScale.x < 0) offset.x *= -1;
 
@@ -238,7 +239,7 @@ public class PlayerPlatformer : MonoBehaviour
         Vector2 direction = Vector2.down;
         float xRightPosition = (float)(position.x + ((myBoxCollider.size.x / 2) * transform.localScale.x * 0.95));
         float yRIghtPosition = position.y;
-        float xLeftPosition = (float)(position.x - ((myBoxCollider.size.x / 2) * transform.localScale.x * 0.95));
+        float xLeftPosition = (float)(position.x - ((myBoxCollider.size.x / 2) * transform.localScale.x * 0.75));
         float yLeftPosition = position.y;
 
         float distance = (myBoxCollider.size.y / 2) * transform.localScale.y * 1.05f;
@@ -276,7 +277,8 @@ public class PlayerPlatformer : MonoBehaviour
             float xBottomPosition = (float)(position.x + ((myBoxCollider.size.x / 2) * transform.localScale.x * 0.95));
             float yBottomPosition = position.y;
 
-            float distance = -(myBoxCollider.size.x / 2) * transform.localScale.x * 1.05f;
+            //tweaked distance for scaling purposes
+            float distance = -(myBoxCollider.size.x / 3) * transform.localScale.x * 1.05f;
             Vector2 positionTop = new Vector2(xTopPosition, yTopPosition);
             Vector2 positionBottom = new Vector2(xBottomPosition, yBottomPosition);
 
