@@ -6,17 +6,22 @@ using UnityEngine.EventSystems;
 using System;
 
 public class LevelManager : MonoBehaviour {
-    public float healthTicTimer;
+    /*public float healthTicTimer;
     private float healthTicCountdown;
 
     public float homeTicTimer;
-    private float homeTicTimerCountdown;
+    private float homeTicTimerCountdown;*/
     private PlayerPlatformer thePlayer;
+    public GameObject theLevelSelectCanvas;
+    public GameObject pressUpCanvas;
     // Use this for initialization
 
     void Start () {
-        healthTicCountdown = healthTicTimer;
-        homeTicTimerCountdown = homeTicTimer;
+        /*healthTicCountdown = healthTicTimer;
+        homeTicTimerCountdown = homeTicTimer;*/
+        theLevelSelectCanvas.SetActive(false);
+        pressUpCanvas.SetActive(false);
+
         thePlayer = FindObjectOfType<PlayerPlatformer>();
 	}
 	
@@ -49,6 +54,27 @@ public class LevelManager : MonoBehaviour {
         {
             SceneManager.LoadScene("MainMenu");
         }
+    }
+
+    public void EnableLevelSelect() {
+        theLevelSelectCanvas.SetActive(true);
+    }
+
+    public void EnablePressUpCanvas()
+    {
+        pressUpCanvas.SetActive(true);
+
+    }
+
+    public void DisableLevelSelect()
+    {
+        theLevelSelectCanvas.SetActive(false);
+    }
+
+    public void DisablePressUpCanvas()
+    {
+        pressUpCanvas.SetActive(false);
+
     }
 
     public void GameOverWill()

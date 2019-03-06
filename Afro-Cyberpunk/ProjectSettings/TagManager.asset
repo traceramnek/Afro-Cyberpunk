@@ -8,6 +8,7 @@ TagManager:
   - home
   - ground
   - finished
+  - levelSelect
   layers:
   - Default
   - TransparentFX

@@ -212,20 +212,32 @@ public class PlayerPlatformer : MonoBehaviour
             theLevelManager.youWin();
         }*/
     }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "levelSelect")
+        {
+            theLevelManager.EnablePressUpCanvas();
+        }
 
+    }
     private void OnTriggerStay2D(Collider2D collision)
     {
-        /*if (collision.tag == "home")
+        if (collision.tag == "levelSelect")
         {
-            isAtHome = true;
-        }*/
+            if (Constants.PlayerInput.IsPressingUp)
+            {
+                theLevelManager.EnableLevelSelect();
+                theLevelManager.DisablePressUpCanvas();
+            }
+        }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        /*if (collision.tag == "home")
+        if (collision.tag == "levelSelect")
         {
-            isAtHome = false;
-        }*/
+            theLevelManager.DisablePressUpCanvas();
+            theLevelManager.DisableLevelSelect();
+        }
     }
 
     // checks the grounded state of the BoxCollider2D
