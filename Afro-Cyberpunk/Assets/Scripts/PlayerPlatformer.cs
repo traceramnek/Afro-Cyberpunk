@@ -104,6 +104,8 @@ public class PlayerPlatformer : MonoBehaviour
                 remainingJumps = maxJumps;
                 remainingAirDashes = maxAirDashes;
                 remainingWallRunCount = maxWallRunCount;
+                remainingWallRunTime = maxWallRunTime;
+
             }
             // if the player is not grounded, but has full jumps, subtract one to prevent free air jump
             else if (remainingJumps >= maxJumps)
@@ -178,20 +180,21 @@ public class PlayerPlatformer : MonoBehaviour
             }
 
             // wall run
-            if (Constants.PlayerInput.IsPressingRight && IsTouchingWall() && !IsGrounded() && !pressingJump && (remainingWallRunCount > 0) && (remainingWallRunTime > 0.0f))
+            if (Constants.PlayerInput.IsPressingRight && IsTouchingWall() && !IsGrounded() && !pressingJump && (remainingWallRunCount > 0) && (remainingWallRunTime >= 0.0f))
             {
                 wallRun();
-                // remainingWallRunTime -= Time.deltaTime;
+                remainingWallRunTime -= Time.deltaTime;
                 // Debug.Log(remainingWallRunCount);
-                // remainingWallRunCount--;
+                //remainingWallRunCount--;
 
             }
-            else if (Constants.PlayerInput.IsPressingLeft && IsTouchingWall() && !IsGrounded() && !pressingJump && (remainingWallRunCount > 0) && (remainingWallRunTime > 0.0f))
+            else if (Constants.PlayerInput.IsPressingLeft && IsTouchingWall() && !IsGrounded() && !pressingJump && (remainingWallRunCount > 0) && (remainingWallRunTime >= 0.0f))
             {
                 wallRun();
-                // remainingWallRunTime -= Time.deltaTime;
+                remainingWallRunTime -= Time.deltaTime;
+                //remainingWallRunTime -= Time.deltaTime;
                 // Debug.Log(remainingWallRunCount);
-                // remainingWallRunCount--;
+                //remainingWallRunCount--;
 
             }
 

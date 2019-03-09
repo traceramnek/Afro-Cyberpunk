@@ -13615,6 +13615,9 @@ MonoBehaviour:
   wallJumpSpeed: 5
   wallJumpAngle: 2.1
   maxAirDashes: 1
+  wallRunSpeed: 5
+  maxWallRunCount: 1
+  maxWallRunTime: 2
   airDashSpeed: 5
   gravityScale: 12
 --- !u!212 &1475989807
