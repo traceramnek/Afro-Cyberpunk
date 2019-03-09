@@ -25030,8 +25030,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 889a723e30e8b4da3bef46fd28c23073, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &320835736
 Transform:
   m_ObjectHideFlags: 0
@@ -27070,6 +27068,9 @@ MonoBehaviour:
   wallJumpSpeed: 15
   wallJumpAngle: 2.1
   maxAirDashes: 1
+  wallRunSpeed: 10
+  maxWallRunCount: 5
+  maxWallRunTime: 2
   airDashSpeed: 10
   gravityScale: 4
 --- !u!212 &574288972
@@ -32459,7 +32460,7 @@ Sprite:
         format: 0
         dimension: 0
       m_DataSize: 80
-      _typelessdata: 000000bf0000003f000000000000003f0000003f00000000000000bf000000bf000000000000003f000000bf000000000000000000000000000000000000000000000000000000000000000000000000
+      _typelessdata: 000000bf0000003f000000000000003f0000003f00000000000000bf000000bf000000000000003f000000bf00000000000000000000803f0000803f0000803f00000000000000000000803f00000000
     m_Bindpose: []
     textureRect:
       serializedVersion: 2
@@ -34344,8 +34345,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9924d570bde1294db493c762194be15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1474168077
 Transform:
   m_ObjectHideFlags: 0
@@ -35836,7 +35835,7 @@ Sprite:
         format: 0
         dimension: 0
       m_DataSize: 80
-      _typelessdata: 000000bf0000003f000000000000003f0000003f00000000000000bf000000bf000000000000003f000000bf000000000000000000000000000000000000000000000000000000000000000000000000
+      _typelessdata: 000000bf0000003f000000000000003f0000003f00000000000000bf000000bf000000000000003f000000bf00000000000000000000803f0000803f0000803f00000000000000000000803f00000000
     m_Bindpose: []
     textureRect:
       serializedVersion: 2
@@ -38025,8 +38024,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 765720461271b6246bd0cdbddbb57934, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1927686744
 Transform:
   m_ObjectHideFlags: 0
@@ -39657,7 +39654,7 @@ Sprite:
         format: 0
         dimension: 0
       m_DataSize: 80
-      _typelessdata: 000000bf0000003f000000000000003f0000003f00000000000000bf000000bf000000000000003f000000bf000000000000000000000000000000000000000000000000000000000000000000000000
+      _typelessdata: 000000bf0000003f000000000000003f0000003f00000000000000bf000000bf000000000000003f000000bf00000000000000000000803f0000803f0000803f00000000000000000000803f00000000
     m_Bindpose: []
     textureRect:
       serializedVersion: 2

@@ -27,7 +27,7 @@ public class PlayerPlatformer : MonoBehaviour
     public float stunCooldown;
     private float stunCounter;
 
-    
+
     //jump handling
     public float jumpSpeed;
     public LayerMask ground;
@@ -47,6 +47,15 @@ public class PlayerPlatformer : MonoBehaviour
     private int remainingAirDashes;
     private bool pressingAirDash;
 
+    // wall running
+
+    public float wallRunSpeed;
+    public int maxWallRunCount;
+    private int remainingWallRunCount;
+
+    public float maxWallRunTime;
+    private float remainingWallRunTime;
+
     public float airDashSpeed;
     public float gravityScale;
 
@@ -62,6 +71,8 @@ public class PlayerPlatformer : MonoBehaviour
         remainingJumps = 0;
         pressingJump = false;
         stunCounter = 0;
+        remainingWallRunCount = maxWallRunCount;
+        remainingWallRunTime = maxWallRunTime;
         remainingAirDashes = maxAirDashes;
         isEnabled = true;
         //isAtHome = false;
@@ -92,6 +103,7 @@ public class PlayerPlatformer : MonoBehaviour
             {
                 remainingJumps = maxJumps;
                 remainingAirDashes = maxAirDashes;
+                remainingWallRunCount = maxWallRunCount;
             }
             // if the player is not grounded, but has full jumps, subtract one to prevent free air jump
             else if (remainingJumps >= maxJumps)
@@ -140,10 +152,11 @@ public class PlayerPlatformer : MonoBehaviour
             // wall jump
             if (Constants.PlayerInput.IsPressingSpace && IsTouchingWall() && !IsGrounded() && !pressingJump)
             {
+                remainingWallRunTime = maxWallRunTime;
                 stunCounter = 0.0f;
                 myRigidBody.gravityScale = gravityScale;
-                float wallJumpx = wallJumpSpeed * Mathf.Cos(wallJumpAngle) * (1.5f* transform.localScale.x);
-                float wallJumpy = wallJumpSpeed * Mathf.Sin(wallJumpAngle) * (1.5f* transform.localScale.y);
+                float wallJumpx = wallJumpSpeed * Mathf.Cos(wallJumpAngle) * (1.5f * transform.localScale.x);
+                float wallJumpy = wallJumpSpeed * Mathf.Sin(wallJumpAngle) * (1.5f * transform.localScale.y);
                 myRigidBody.velocity = new Vector2(wallJumpx, wallJumpy);
                 pressingJump = true;
                 stunCounter = stunCooldown;
@@ -163,6 +176,25 @@ public class PlayerPlatformer : MonoBehaviour
             {
                 pressingJump = false;
             }
+
+            // wall run
+            if (Constants.PlayerInput.IsPressingRight && IsTouchingWall() && !IsGrounded() && !pressingJump && (remainingWallRunCount > 0) && (remainingWallRunTime > 0.0f))
+            {
+                wallRun();
+                // remainingWallRunTime -= Time.deltaTime;
+                // Debug.Log(remainingWallRunCount);
+                // remainingWallRunCount--;
+
+            }
+            else if (Constants.PlayerInput.IsPressingLeft && IsTouchingWall() && !IsGrounded() && !pressingJump && (remainingWallRunCount > 0) && (remainingWallRunTime > 0.0f))
+            {
+                wallRun();
+                // remainingWallRunTime -= Time.deltaTime;
+                // Debug.Log(remainingWallRunCount);
+                // remainingWallRunCount--;
+
+            }
+
 
             // air dash
             if (!IsGrounded() && Constants.PlayerInput.IsPressingAirDash && !pressingAirDash && remainingAirDashes > 0)
@@ -334,6 +366,12 @@ public class PlayerPlatformer : MonoBehaviour
 
             return false;
         }
+    }
+
+    public void wallRun()
+    {
+        // move player upward along an object
+        myRigidBody.velocity = new Vector3(myRigidBody.velocity.x, wallRunSpeed, 0f);
     }
 
     /*public void takeHealthDamage(int damageToDeal)
