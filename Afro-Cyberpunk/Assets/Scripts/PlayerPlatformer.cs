@@ -42,6 +42,9 @@ public class PlayerPlatformer : MonoBehaviour
     public float wallJumpSpeed;
     public float wallJumpAngle;
 
+    public float wallJumpFactorX;
+    public float wallJumpFactorY;
+
     // Air Dashing
     public int maxAirDashes;
     private int remainingAirDashes;
@@ -154,11 +157,10 @@ public class PlayerPlatformer : MonoBehaviour
             // wall jump
             if (Constants.PlayerInput.IsPressingSpace && IsTouchingWall() && !IsGrounded() && !pressingJump)
             {
-                remainingWallRunTime = maxWallRunTime;
                 stunCounter = 0.0f;
                 myRigidBody.gravityScale = gravityScale;
-                float wallJumpx = wallJumpSpeed * Mathf.Cos(wallJumpAngle) * (1.5f * transform.localScale.x);
-                float wallJumpy = wallJumpSpeed * Mathf.Sin(wallJumpAngle) * (1.5f * transform.localScale.y);
+                float wallJumpx = wallJumpSpeed * Mathf.Cos(wallJumpAngle) * (wallJumpFactorX * transform.localScale.x);
+                float wallJumpy = wallJumpSpeed * Mathf.Sin(wallJumpAngle) * (wallJumpFactorY * transform.localScale.y);
                 myRigidBody.velocity = new Vector2(wallJumpx, wallJumpy);
                 pressingJump = true;
                 stunCounter = stunCooldown;
