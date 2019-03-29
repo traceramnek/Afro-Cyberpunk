@@ -77,5 +77,12 @@ public class Constants
                 return Input.GetKey(KeyCode.B);
             }
         }
+        public static bool pressedBuildingToggle
+        {
+            get
+            {
+                return Input.GetKeyUp(KeyCode.T);
+            }
+        }
     }
 }
