@@ -5,7 +5,8 @@ using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
 using System;
 
-public class LevelManager : MonoBehaviour {
+public class LevelManager : MonoBehaviour
+{
     /*public float healthTicTimer;
     private float healthTicCountdown;
 
@@ -15,18 +16,22 @@ public class LevelManager : MonoBehaviour {
     public GameObject theLevelSelectCanvas;
     public GameObject pressUpCanvas;
     // Use this for initialization
+    public delegate void BuildingToggle();
+    public static event BuildingToggle buildingToggler;
 
-    void Start () {
+    void Start()
+    {
         /*healthTicCountdown = healthTicTimer;
         homeTicTimerCountdown = homeTicTimer;*/
         theLevelSelectCanvas.SetActive(false);
         pressUpCanvas.SetActive(false);
 
         thePlayer = FindObjectOfType<PlayerPlatformer>();
-	}
-	
-	// Update is called once per frame
-	void Update () {
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
 
         /*if(!thePlayer.isHome())
         {
@@ -49,14 +54,22 @@ public class LevelManager : MonoBehaviour {
                 homeTicTimerCountdown = homeTicTimer;
             }
         }*/
-        
+
         if (Input.GetKey(KeyCode.Escape))
         {
             SceneManager.LoadScene("MainMenu");
         }
     }
 
-    public void EnableLevelSelect() {
+    void FixedUpdate()
+    {
+        if(Constants.PlayerInput.pressedBuildingToggle) {
+            buildingToggler(); // emit event to be received
+        }
+    }
+
+    public void EnableLevelSelect()
+    {
         theLevelSelectCanvas.SetActive(true);
     }
 

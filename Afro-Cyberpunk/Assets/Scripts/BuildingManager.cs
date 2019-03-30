@@ -5,15 +5,26 @@ using UnityEngine;
 public class BuildingManager : MonoBehaviour
 {
     private BoxCollider2D buildingBoxCollider;
-    public bool insideBuilding = false;
+    // make it static so that there is only 1 boolean for all buildings
+    public static bool insideBuilding = false;
     public bool buildingTriggerActive = true;
     private PlayerPlatformer player;
+
+    void OnEnable()
+    {
+        LevelManager.buildingToggler += toggleBuildingCollision;
+    }
+    void OnDisable()
+    {
+        LevelManager.buildingToggler -= toggleBuildingCollision;
+    }
 
     // Start is called before the first frame update
     void Start()
     {
         player = FindObjectOfType<PlayerPlatformer>();
         buildingBoxCollider = GetComponent<BoxCollider2D>();
+        buildingBoxCollider.isTrigger = true;
         if (player == null)
         {
             insideBuilding = true;
@@ -24,7 +35,14 @@ public class BuildingManager : MonoBehaviour
     void FixedUpdate()
     {
 
-        if (Constants.PlayerInput.pressedBuildingToggle && !insideBuilding)
+    }
+
+    // Player pressed toggle button which causes this method to run
+    void toggleBuildingCollision()
+    {
+        Debug.Log("Inside toggle collision");
+        // player has already pressed toggle button so no need to check
+        if (!insideBuilding & player.IsGrounded())
         {
             buildingTriggerActive = !buildingTriggerActive;
         }
@@ -36,7 +54,6 @@ public class BuildingManager : MonoBehaviour
         {
             buildingBoxCollider.isTrigger = true;
         }
-
     }
 
     void OnTriggerEnter2D(Collider2D other)

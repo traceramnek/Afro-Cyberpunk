@@ -62,8 +62,6 @@ public class PlayerPlatformer : MonoBehaviour
     public float airDashSpeed;
     public float gravityScale;
 
-    public Event buildingToggle;
-
     // Use this for initialization
     void Start()
     {
