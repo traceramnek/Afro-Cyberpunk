@@ -1,19 +1,39 @@
 fileFormatVersion: 2
 guid: 9eb6c25d9a4fa4f5199e15697ae4489c
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: Rizo_Run_0
-    21300002: Rizo_Run_1
-    21300004: Rizo_Run_2
-    21300006: Rizo_Run_3
-    21300008: Rizo_Run_4
-    21300010: Rizo_Run_5
-    21300012: Rizo_Run_6
-    21300014: Rizo_Run_7
-    21300016: Rizo_Run_8
-    21300018: Rizo_Run_9
+  internalIDToNameTable:
+  - first:
+      213: -5502115538241046874
+    second: Rizo_Run_0
+  - first:
+      213: 5423415655837426468
+    second: Rizo_Run_1
+  - first:
+      213: -6753962563452018372
+    second: Rizo_Run_2
+  - first:
+      213: 5495304893897416260
+    second: Rizo_Run_3
+  - first:
+      213: 895048920761497869
+    second: Rizo_Run_4
+  - first:
+      213: -2420044337542340918
+    second: Rizo_Run_5
+  - first:
+      213: 6876370480236567501
+    second: Rizo_Run_6
+  - first:
+      213: -7656710460696330743
+    second: Rizo_Run_7
+  - first:
+      213: 836399046319729298
+    second: Rizo_Run_8
+  - first:
+      213: -6101013681449865972
+    second: Rizo_Run_9
   externalObjects: {}
-  serializedVersion: 9
+  serializedVersion: 10
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -97,10 +117,10 @@ TextureImporter:
       name: Rizo_Run_0
       rect:
         serializedVersion: 2
-        x: 152
-        y: 477
-        width: 230
-        height: 435
+        x: 0
+        y: 474
+        width: 474
+        height: 474
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -108,7 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a5efcdbc5447d46fc95d913fde78077e
+      spriteID: 58d65ab38ee7b4283bfbf5abd6f4b49c
+      internalID: -5502115538241046874
       vertices: []
       indices: 
       edges: []
@@ -117,10 +138,10 @@ TextureImporter:
       name: Rizo_Run_1
       rect:
         serializedVersion: 2
-        x: 573
-        y: 477
-        width: 302
-        height: 439
+        x: 474
+        y: 474
+        width: 474
+        height: 474
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,7 +149,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0124ec653b1bd4f2dbf64a530b4c3348
+      spriteID: d92198a2259de496bb18db9e0da3aa12
+      internalID: 5423415655837426468
       vertices: []
       indices: 
       edges: []
@@ -137,10 +159,10 @@ TextureImporter:
       name: Rizo_Run_2
       rect:
         serializedVersion: 2
-        x: 1017
-        y: 510
-        width: 343
-        height: 413
+        x: 948
+        y: 474
+        width: 474
+        height: 474
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -148,7 +170,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 06d2933444fab48e98c7997b37a714c0
+      spriteID: 196475ec814eb4497880c4e6fe28eab7
+      internalID: -6753962563452018372
       vertices: []
       indices: 
       edges: []
@@ -157,10 +180,10 @@ TextureImporter:
       name: Rizo_Run_3
       rect:
         serializedVersion: 2
-        x: 1499
-        y: 477
-        width: 324
-        height: 439
+        x: 1422
+        y: 474
+        width: 474
+        height: 474
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -168,7 +191,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0a57f747666b2410a8b443693dc0a4dc
+      spriteID: 847553339340b47d1993b18eb9d3e73b
+      internalID: 5495304893897416260
       vertices: []
       indices: 
       edges: []
@@ -177,10 +201,10 @@ TextureImporter:
       name: Rizo_Run_4
       rect:
         serializedVersion: 2
-        x: 2047
-        y: 477
-        width: 230
-        height: 435
+        x: 1896
+        y: 474
+        width: 474
+        height: 474
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -188,7 +212,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 414e4848a247e4685a4b8c5257e37969
+      spriteID: 6107828d7a6df457cb8c6fd4948f7b10
+      internalID: 895048920761497869
       vertices: []
       indices: 
       edges: []
@@ -197,10 +222,10 @@ TextureImporter:
       name: Rizo_Run_5
       rect:
         serializedVersion: 2
-        x: 155
-        y: 3
-        width: 200
-        height: 428
+        x: 0
+        y: 0
+        width: 474
+        height: 474
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -208,7 +233,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6424fef8dae2641cab7a6a58157400e6
+      spriteID: 5b6c52eb8498e415a85ffe87ea238fb0
+      internalID: -2420044337542340918
       vertices: []
       indices: 
       edges: []
@@ -217,10 +243,10 @@ TextureImporter:
       name: Rizo_Run_6
       rect:
         serializedVersion: 2
-        x: 573
-        y: 3
-        width: 295
-        height: 439
+        x: 474
+        y: 0
+        width: 474
+        height: 474
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -228,7 +254,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e70c0580aa16b46ae9a7b5b83cf0da20
+      spriteID: 2379cfbfb5ba34f00af91e1aa6382fe5
+      internalID: 6876370480236567501
       vertices: []
       indices: 
       edges: []
@@ -237,10 +264,10 @@ TextureImporter:
       name: Rizo_Run_7
       rect:
         serializedVersion: 2
-        x: 1017
-        y: 36
-        width: 343
-        height: 413
+        x: 948
+        y: 0
+        width: 474
+        height: 474
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -248,7 +275,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fcf04f157293a4683b924cb1a6d4f908
+      spriteID: 99c675490eaa6431aa7c045cd2f02fbe
+      internalID: -7656710460696330743
       vertices: []
       indices: 
       edges: []
@@ -257,10 +285,10 @@ TextureImporter:
       name: Rizo_Run_8
       rect:
         serializedVersion: 2
-        x: 1502
-        y: 3
-        width: 317
-        height: 439
+        x: 1422
+        y: 0
+        width: 474
+        height: 474
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -268,7 +296,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1352408a5a5db477d9ee223555e1e9b6
+      spriteID: 58d98400c78c94060bf4fc74e68b29e2
+      internalID: 836399046319729298
       vertices: []
       indices: 
       edges: []
@@ -277,10 +306,10 @@ TextureImporter:
       name: Rizo_Run_9
       rect:
         serializedVersion: 2
-        x: 2047
-        y: 3
-        width: 230
-        height: 435
+        x: 1896
+        y: 0
+        width: 474
+        height: 474
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -288,7 +317,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2ae68a4e5be824e6fb5563878f8e81c1
+      spriteID: 9058313f2ecad4adfaaf1db05ec071b6
+      internalID: -6101013681449865972
       vertices: []
       indices: 
       edges: []
@@ -296,11 +326,13 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5035404de9e304c3eaae1cf8b0766843
+    spriteID: c2e39af560edd493c893b17f8ee29bd0
+    internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
+    secondaryTextures: []
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
