@@ -9,7 +9,7 @@ public class PlayerPlatformer : MonoBehaviour
     //Initializations
     private Rigidbody2D myRigidBody;
     private BoxCollider2D myBoxCollider;
-    //private Animator myAnimatorController;
+    private Animator myAnimatorController;
     private bool isEnabled;
     private LevelManager theLevelManager;
     //private bool isAtHome;
@@ -70,7 +70,7 @@ public class PlayerPlatformer : MonoBehaviour
         theLevelManager = FindObjectOfType<LevelManager>();
         myRigidBody = GetComponent<Rigidbody2D>();
         myBoxCollider = GetComponent<BoxCollider2D>();
-        //myAnimatorController = GetComponent<Animator>();
+        myAnimatorController = GetComponent<Animator>();
         remainingJumps = 0;
         pressingJump = false;
         stunCounter = 0;
@@ -108,12 +108,15 @@ public class PlayerPlatformer : MonoBehaviour
                 remainingAirDashes = maxAirDashes;
                 remainingWallRunCount = maxWallRunCount;
                 remainingWallRunTime = maxWallRunTime;
+                myAnimatorController.SetBool("grounded", true);
+
 
             }
             // if the player is not grounded, but has full jumps, subtract one to prevent free air jump
             else if (remainingJumps >= maxJumps)
             {
                 remainingJumps = maxJumps - 1;
+                myAnimatorController.SetBool("grounded", false);
             }
 
             if (IsTouchingWall())
@@ -128,7 +131,7 @@ public class PlayerPlatformer : MonoBehaviour
                 if (Constants.PlayerInput.IsPressingRight)
                 {
                     myRigidBody.velocity = new Vector3(moveSpeed, myRigidBody.velocity.y, 0f);
-                    //myAnimatorController.SetFloat("velocity", myRigidBody.velocity.x);
+                    myAnimatorController.SetFloat("velocity", myRigidBody.velocity.x);
 
                     //keep the scaling intact
                     transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
@@ -150,7 +153,7 @@ public class PlayerPlatformer : MonoBehaviour
                     myRigidBody.velocity = new Vector3(0f, myRigidBody.velocity.y, 0f);
                 }
 
-                //myAnimatorController.SetFloat("velocity", Mathf.Abs(myRigidBody.velocity.x));
+                myAnimatorController.SetFloat("velocity", Mathf.Abs(myRigidBody.velocity.x));
 
             }
 
@@ -224,12 +227,12 @@ public class PlayerPlatformer : MonoBehaviour
             }
 
 
-            //myAnimator.SetFloat("Speed", myRigidBody.velocity.x);
+            myAnimatorController.SetFloat("velocity", myRigidBody.velocity.x);
         }
         else
         {
             myRigidBody.velocity = new Vector3();
-            //myAnimatorController.SetFloat("velocity", Mathf.Abs(myRigidBody.velocity.x));
+            myAnimatorController.SetFloat("velocity", Mathf.Abs(myRigidBody.velocity.x));
         }
     }
 
