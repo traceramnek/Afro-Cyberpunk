@@ -101,7 +101,7 @@ public class PlayerPlatformer : MonoBehaviour
             {
                 this.transform.position = homeLocation.position;
             }*/
-
+            //Debug.Log(IsGrounded());
             if (IsGrounded())
             {
                 remainingJumps = maxJumps;
@@ -109,8 +109,16 @@ public class PlayerPlatformer : MonoBehaviour
                 remainingWallRunCount = maxWallRunCount;
                 remainingWallRunTime = maxWallRunTime;
                 myAnimatorController.SetBool("grounded", true);
+                myAnimatorController.SetBool("falling", false);
 
-
+            }
+            else if(!IsGrounded())
+            {
+                myAnimatorController.SetBool("grounded", false);
+                if (remainingJumps == maxJumps)
+                {
+                    myAnimatorController.SetBool("falling", true);
+                }
             }
             // if the player is not grounded, but has full jumps, subtract one to prevent free air jump
             else if (remainingJumps >= maxJumps)
@@ -131,7 +139,7 @@ public class PlayerPlatformer : MonoBehaviour
                 if (Constants.PlayerInput.IsPressingRight)
                 {
                     myRigidBody.velocity = new Vector3(moveSpeed, myRigidBody.velocity.y, 0f);
-                    myAnimatorController.SetFloat("velocity", myRigidBody.velocity.x);
+                    //myAnimatorController.SetFloat("velocity", myRigidBody.velocity.x);
 
                     //keep the scaling intact
                     transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
@@ -139,6 +147,7 @@ public class PlayerPlatformer : MonoBehaviour
                 else if (Constants.PlayerInput.IsPressingLeft)
                 {
                     myRigidBody.velocity = new Vector3(-moveSpeed, myRigidBody.velocity.y, 0f);
+                    //myAnimatorController.SetFloat("velocity", Mathf.Abs(myRigidBody.velocity.x));
 
                     //flip the player while keeping the scaling intact
                     transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
@@ -177,6 +186,7 @@ public class PlayerPlatformer : MonoBehaviour
                 myRigidBody.gravityScale = gravityScale;
                 myRigidBody.velocity = new Vector3(myRigidBody.velocity.x, jumpSpeed, 0f);
                 --remainingJumps;
+                //Debug.Log(remainingJumps);
                 pressingJump = true;
             }
             else if (!Constants.PlayerInput.IsPressingSpace)
@@ -227,12 +237,12 @@ public class PlayerPlatformer : MonoBehaviour
             }
 
 
-            myAnimatorController.SetFloat("velocity", myRigidBody.velocity.x);
+            //myAnimatorController.SetFloat("velocity", myRigidBody.velocity.x);
         }
         else
         {
             myRigidBody.velocity = new Vector3();
-            myAnimatorController.SetFloat("velocity", Mathf.Abs(myRigidBody.velocity.x));
+            //myAnimatorController.SetFloat("velocity", Mathf.Abs(myRigidBody.velocity.x));
         }
     }
 
