@@ -119,6 +119,7 @@ public class PlayerPlatformer : MonoBehaviour
                 {
                     myAnimatorController.SetBool("falling", true);
                 }
+                
             }
             // if the player is not grounded, but has full jumps, subtract one to prevent free air jump
             else if (remainingJumps >= maxJumps)
@@ -199,6 +200,10 @@ public class PlayerPlatformer : MonoBehaviour
             {
                 wallRun();
                 remainingWallRunTime -= Time.deltaTime;
+                //myAnimatorController.SetBool("wallRunning", true);
+                //myAnimatorController.SetInt("falling", remainingWallRunTime);
+                //this will change to the falling animation the moment the remainingWallRunTime is less than 0 so it looks like you are falling from the wall once you run out of wallRun Time
+
                 // Debug.Log(remainingWallRunCount);
                 //remainingWallRunCount--;
 
@@ -207,7 +212,11 @@ public class PlayerPlatformer : MonoBehaviour
             {
                 wallRun();
                 remainingWallRunTime -= Time.deltaTime;
-                //remainingWallRunTime -= Time.deltaTime;
+                //myAnimatorController.SetBool("wallRunning", true);
+                //myAnimatorController.SetInt("falling", remainingWallRunTime);
+                //this will change to the falling animation the moment the remainingWallRunTime is less than 0 so it looks like you are falling from the wall once you run out of wallRun Time
+                
+            //remainingWallRunTime -= Time.deltaTime;
                 // Debug.Log(remainingWallRunCount);
                 //remainingWallRunCount--;
 
