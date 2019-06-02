@@ -19916,7 +19916,7 @@ MonoBehaviour:
   startPoint: {fileID: 820018332}
   endPoint: {fileID: 389764861}
   moveSpeed: 8
-  waitTime: 0
+  waitTime: 2
 --- !u!114 &881732640
 MonoBehaviour:
   m_ObjectHideFlags: 0
