@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BuildingManager : MonoBehaviour
 {
-    private BoxCollider2D buildingBoxCollider;
+    private Collider2D buildingBoxCollider;
     // make it static so that there is only 1 boolean for all buildings
     public static bool insideBuilding = false;
     public bool buildingTriggerActive = true;
@@ -23,7 +23,14 @@ public class BuildingManager : MonoBehaviour
     void Start()
     {
         player = FindObjectOfType<PlayerPlatformer>();
-        buildingBoxCollider = GetComponent<BoxCollider2D>();
+        if (GetComponent<BoxCollider2D>() != null)
+        {
+            buildingBoxCollider = GetComponent<BoxCollider2D>();
+        }
+        else if (GetComponent<PolygonCollider2D>() != null)
+        {
+            buildingBoxCollider = GetComponent<PolygonCollider2D>();
+        }
         buildingBoxCollider.isTrigger = true;
         if (player == null)
         {
