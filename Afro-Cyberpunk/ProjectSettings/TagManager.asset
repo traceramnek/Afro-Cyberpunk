@@ -9,6 +9,7 @@ TagManager:
   - ground
   - finished
   - levelSelect
+  - CutScene
   layers:
   - Default
   - TransparentFX
