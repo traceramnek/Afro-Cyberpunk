@@ -10,9 +10,13 @@ public class Dialog : MonoBehaviour
     private int index;
     public float typingSpeed;
     public GameObject continueButton;
+    public Animator textDisplayAnim;
+    //when we find an audio source for the continue button place it on the DemoConversation gameobject
+    //private AudioSource source;
 
     void Start()
     {
+        //source = GetComponent<AudioSource>();
         StartCoroutine(Type());
     }
 
@@ -34,6 +38,8 @@ public class Dialog : MonoBehaviour
 
     public void NextSentence()
     {
+        //source.Play();
+        textDisplayAnim.SetTrigger("Change");
         continueButton.SetActive(false);
         if(index < sentences.Length - 1)
         {
