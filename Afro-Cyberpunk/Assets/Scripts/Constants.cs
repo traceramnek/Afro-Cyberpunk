@@ -7,6 +7,13 @@ public class Constants
 
     public static class PlayerInput
     {
+        public static bool IsPressingEnter
+        {
+            get
+            {
+                return Input.GetKey(KeyCode.KeypadEnter) || Input.GetKey(KeyCode.Return);
+            }
+        }
         public static bool IsPressingLeft
         {
             get

@@ -11,13 +11,15 @@ public class Dialog : MonoBehaviour
     public float typingSpeed;
     public GameObject continueButton;
     public Animator textDisplayAnim;
+    private bool conversationFinished;
     //when we find an audio source for the continue button place it on the DemoConversation gameobject
     //private AudioSource source;
 
-    void Start()
+    void OnEnable()
     {
         //source = GetComponent<AudioSource>();
         StartCoroutine(Type());
+        conversationFinished = false;
     }
 
     void Update()
@@ -25,6 +27,10 @@ public class Dialog : MonoBehaviour
         if(textDisplay.text == sentences[index])
         {
             continueButton.SetActive(true);
+            if (Constants.PlayerInput.IsPressingEnter)
+            {
+                NextSentence();
+            }
         }
     }
     IEnumerator Type(){
@@ -46,12 +52,25 @@ public class Dialog : MonoBehaviour
             index++;
             textDisplay.text = "";
             StartCoroutine(Type());
+            conversationFinished = false;
         }
         else
         {
             textDisplay.text = "";
             continueButton.SetActive(false);
+            RestartConversation();
+            conversationFinished = true;
 
         }
+    }
+
+    public void RestartConversation()
+    {
+        index = 0;
+    }
+    
+    public bool IsConversationFinished()
+    {
+        return conversationFinished;
     }
 }

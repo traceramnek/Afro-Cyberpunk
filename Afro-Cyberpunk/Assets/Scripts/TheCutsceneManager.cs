@@ -6,6 +6,7 @@ using UnityEngine.Playables;
 public class TheCutsceneManager : MonoBehaviour
 {
     public GameObject thePlayer;
+    private LevelManager theLevelManager;
     private Vector3 playerEndingPosition;
     private bool fix;
     public Animator playerAnimator;
@@ -16,9 +17,10 @@ public class TheCutsceneManager : MonoBehaviour
     void OnEnable()
     {
         fix = false;
+        theLevelManager = FindObjectOfType<LevelManager>();
         //this cutscene requires that the player is facing the right
         thePlayer.transform.localScale = new Vector3(Mathf.Abs(thePlayer.transform.localScale.x), thePlayer.transform.localScale.y, thePlayer.transform.localScale.z);
-        thePlayer.GetComponent<PlayerPlatformer>().enabled = false;
+        theLevelManager.DisablePlayerControls();
         playerAnim = playerAnimator.runtimeAnimatorController;
         playerAnimator.runtimeAnimatorController = null;
     }
@@ -33,7 +35,7 @@ public class TheCutsceneManager : MonoBehaviour
             playerAnimator.runtimeAnimatorController = playerAnim;
             thePlayer.transform.position = playerEndingPosition;
             playerAnimator.SetBool("grounded", true);
-            thePlayer.GetComponent<PlayerPlatformer>().enabled = true;
+            theLevelManager.EnablePlayerControls();
             this.gameObject.SetActive(false);
         }
     }
