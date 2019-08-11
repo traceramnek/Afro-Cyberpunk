@@ -6,6 +6,7 @@ public class EnemySight : MonoBehaviour
 {
 
     public float distance;
+    private Transform playerPos;
 
     // Start is called before the first frame update
     void Start()
@@ -17,21 +18,25 @@ public class EnemySight : MonoBehaviour
     void Update()
     {
 
-        RaycastHit2D hitInfo = Physics2D.Raycast(transform.position, transform.right, distance);
+        // RaycastHit2D hitInfo = Physics2D.Raycast(transform.position, transform.right, distance);
     
-        if (hitInfo.collider != null && hitInfo.collider.CompareTag("Player"))
-        {
-            Debug.Log(hitInfo.collider);
-            Debug.DrawRay(transform.position, hitInfo.point, Color.red);
-        }
-        else
-        {
-            Debug.DrawRay(transform.position, transform.right * distance, Color.green);
-        }
+        // if (hitInfo.collider != null && hitInfo.collider.CompareTag("Player"))
+        // {
+        //     Debug.Log(hitInfo.collider);
+        //     Debug.DrawRay(transform.position, hitInfo.point, Color.red);
+        // }
+        // else
+        // {
+        //     Debug.DrawRay(transform.position, transform.right * distance, Color.green);
+        // }
     }
 
-    void RaycastLogic()
+   void OnTriggerEnter2D(Collider2D other)
     {
-
+        if (other.CompareTag("Player")) {
+            playerPos = other.GetComponent<Transform>();
+            Debug.Log("Player is Seen");
+        }
+        
     }
 }
