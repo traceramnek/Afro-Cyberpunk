@@ -275,6 +275,7 @@ public class PlayerPlatformer : MonoBehaviour
     {
         if (collision.tag == "levelSelect")
         {
+            theLevelManager.MaintainPressUpCanvas();
             theLevelManager.EnablePressUpCanvas();
         }
 
@@ -287,6 +288,10 @@ public class PlayerPlatformer : MonoBehaviour
             {
                 theLevelManager.EnableLevelSelect();
                 theLevelManager.DisablePressUpCanvas();
+            }
+            else
+            {
+                theLevelManager.MaintainPressUpCanvas();
             }
         }
     }

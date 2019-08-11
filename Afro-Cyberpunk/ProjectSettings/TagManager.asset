@@ -9,6 +9,8 @@ TagManager:
   - ground
   - finished
   - levelSelect
+  - CutScene
+  - conversation
   layers:
   - Default
   - TransparentFX
